@@ -25,8 +25,8 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 - [ ] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
 
 ### Elevator pitch
+Have you ever been asked about your favorite movies or cinematic moments, only to draw a blank? Cineview is the ultimate app for movie enthusiasts. It allows users to rate and review every film they watch, create personalized lists of their all-time favorites, and share their thoughts with friends in real time. With features such as liking, commenting, and following friends’ reviews, Cineview is more than just a review platform—it’s a social hub for cinema lovers. Whether you're deciding what to watch next or curating your ultimate favorites, Cineview makes the process seamless, social, and fun.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ### Design
 

@@ -18,9 +18,14 @@ Have you ever been asked about your favorite movies or cinematic moments, only t
 
 ### Key features
 
-- Describe your key feature
-- Describe your key feature
-- Describe your key feature
+- Log in or create an account to access app features.
+- Rate movies using a 7-star and 0-100% scale.
+- View user and friend reviews updated instantly.
+- Add comments and opinions on movies you review.
+- Move seamlessly between the home, review, and account pages.
+- Create and share personalized top-5 movie lists.
+- Search for movies using a public movie database API.
+
 
 ### Technologies
 

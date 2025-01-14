@@ -8,7 +8,7 @@ Cinevaluation is a movie review platform where users can rate, review, and share
 
 
 ### Elevator pitch
-Have you ever been asked about your favorite movies or cinematic moments, only to draw a blank? Cineview is the ultimate app for movie enthusiasts. It allows users to rate and review every film they watch, create personalized lists of their all-time favorites, and share their thoughts with friends in real time. With features such as liking, commenting, and following friends’ reviews, Cineview is more than just a review platform—it’s a social hub for cinema lovers. Whether you're deciding what to watch next or curating your ultimate favorites, Cineview makes the process seamless, social, and fun.
+Have you ever been asked about your favorite movies or cinematic moments, only to draw a blank? Cinevaluate is the ultimate app for movie enthusiasts. It allows users to rate and review every film they watch, create personalized lists of their all-time favorites, and share their thoughts with friends in real time. With features such as liking, commenting, and following friends’ reviews, Cinevaluate is more than just a review platform—it’s a social hub for cinema lovers. Whether you're deciding what to watch next or curating your ultimate favorites, Cinevaluate makes the process seamless, social, and fun.
 
 
 ### Design

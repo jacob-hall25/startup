@@ -38,7 +38,7 @@ I am going to use the required technologies in the following ways.
 - **Service** - Backend service endpoints for:
     - login
     - making reviews
-    - movie database (public API)
+    - movie database (IMDB API)
     - movie recommendations
 - **DB / Login** - User login information is stored in a secure database, users will also not be allowed to review movies without signing up. 
 - **Websocket** - As the users enter their movie reviews, their friends can see them real time and vice versa. 

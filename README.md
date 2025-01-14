@@ -1,28 +1,12 @@
-# Your startup name here
+# Cinevaluation
 
 [My Notes](notes.md)
 
-A brief description of the application here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Cinevaluation is a movie review platform where users can rate, review, and share their opinions on films. Users can create personalized lists of their all-time favorite movies, organized by genre or theme. With the ability to see friends’ ratings and reviews in real time, Cinevaluation makes sharing and discovering new movies easy and enjoyable.
 
-
-> [!NOTE]
->  This is a template for your startup application. You must modify this `README.md` file for each phase of your development. You only need to fill in the section for each deliverable when that deliverable is submitted in Canvas. Without completing the section for a deliverable, the TA will not know what to look for when grading your submission. Feel free to add additional information to each deliverable description, but make sure you at least have the list of rubric items and a description of what you did for each item.
-
-> [!NOTE]
->  If you are not familiar with Markdown then you should review the [documentation](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) before continuing.
 
 ## 🚀 Specification Deliverable
 
-> [!NOTE]
->  Fill in this sections as the submission artifact for this deliverable. You can refer to this [example](https://github.com/webprogramming260/startup-example/blob/main/README.md) for inspiration.
-
-For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
-
-- [ ] Proper use of Markdown
-- [ ] A concise and compelling elevator pitch
-- [ ] Description of key features
-- [ ] Description of how you will use each technology
-- [ ] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
 
 ### Elevator pitch
 Have you ever been asked about your favorite movies or cinematic moments, only to draw a blank? Cineview is the ultimate app for movie enthusiasts. It allows users to rate and review every film they watch, create personalized lists of their all-time favorites, and share their thoughts with friends in real time. With features such as liking, commenting, and following friends’ reviews, Cineview is more than just a review platform—it’s a social hub for cinema lovers. Whether you're deciding what to watch next or curating your ultimate favorites, Cineview makes the process seamless, social, and fun.
@@ -32,14 +16,6 @@ Have you ever been asked about your favorite movies or cinematic moments, only t
 
 ![Design image](placeholder.png)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-```mermaid
-sequenceDiagram
-    actor You
-    actor Website
-    You->>Website: Replace this with your design
-```
 
 ### Key features
 
@@ -51,12 +27,17 @@ sequenceDiagram
 
 I am going to use the required technologies in the following ways.
 
-- **HTML** - Description here
-- **CSS** - Description here
-- **React** - Description here
-- **Service** - Description here
-- **DB/Login** - Description here
-- **WebSocket** - Description here
+- **HTML** - The well structured backbone for the application, used to organize the content. Key pages such as the login or register page, user profile page, and movie rating and review page. Hyperlinks will be included to navigate across the app.
+- **CSS** - Basic stylistic features and color schemes will be handled with CSS. Fonts, whitespace, positioning and decoration.
+- **Javascript** - API requests for movie data and reviews, and real-time updates using WebSockets to display friends’ reviews instantly.
+- **React** - Movie review and rating components, list of favorite movies and user login interactions.
+- **Service** - Backend service endpoints for:
+    - login
+    - making reviews
+    - movie database (public API)
+    - movie recommendations
+- **DB / Login** - User login information is stored in a secure database, users will also not be allowed to review movies without signing up. 
+- **Websocket** - As the users enter their movie reviews, their friends can see them real time and vice versa. 
 
 ## 🚀 AWS deliverable
 

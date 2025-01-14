@@ -1,7 +1,7 @@
-# Cinevaluation
+# Cinevaluate
 
 
-Cinevaluation is a movie review platform where users can rate, review, and share their opinions on films. Users can create personalized lists of their all-time favorite movies, organized by genre or theme. With the ability to see friends’ ratings and reviews in real time, Cinevaluation makes sharing and discovering new movies easy and enjoyable.
+Cinevaluate is a movie review platform where users can rate, review, and share their opinions on films. Users can create personalized lists of their all-time favorite movies, organized by genre or theme. With the ability to see friends’ ratings and reviews in real time, Cinevaluate makes sharing and discovering new movies easy and enjoyable.
 
 
 ## 🚀 Specification Deliverable

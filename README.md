@@ -13,7 +13,7 @@ Have you ever been asked about your favorite movies or cinematic moments, only t
 
 ### Design
 
-![Design image](startup-design-drawing.jpg)
+![Design image](final-design-drawing.jpg)
 
 
 ### Key features

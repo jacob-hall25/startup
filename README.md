@@ -1,6 +1,5 @@
 # Cinevaluation
 
-[My Notes](notes.md)
 
 Cinevaluation is a movie review platform where users can rate, review, and share their opinions on films. Users can create personalized lists of their all-time favorite movies, organized by genre or theme. With the ability to see friends’ ratings and reviews in real time, Cinevaluation makes sharing and discovering new movies easy and enjoyable.
 
@@ -14,7 +13,7 @@ Have you ever been asked about your favorite movies or cinematic moments, only t
 
 ### Design
 
-![Design image](placeholder.png)
+![Design image](startup-design-drawing.jpg)
 
 
 ### Key features

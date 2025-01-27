@@ -53,15 +53,15 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **HTML pages** - I did not complete this part of the deliverable.
-- [ ] **Proper HTML element usage** - I did not complete this part of the deliverable.
-- [ ] **Links** - I did not complete this part of the deliverable.
-- [ ] **Text** - I did not complete this part of the deliverable.
-- [ ] **3rd party API placeholder** - I did not complete this part of the deliverable.
-- [ ] **Images** - I did not complete this part of the deliverable.
-- [ ] **Login placeholder** - I did not complete this part of the deliverable.
-- [ ] **DB data placeholder** - I did not complete this part of the deliverable.
-- [ ] **WebSocket placeholder** - I did not complete this part of the deliverable.
+- [x] **HTML pages** - Four HTML pages. One to log in or create an account, one to view your own and friends ratings, one to make and post your own review, and a profile page that shows the users top five movies and an option to logout. 
+- [x] **Proper HTML element usage** - Most if not all of the the HTML elements highlighted in Simon were implemented in my HTML. Some of the elements we discussed in class were also implemented.
+- [x] **Links** - The login page automatically links to the profile page, the post review page automatically links to the ratings page, and the logout option automatically links to the login page.
+- [x] **Text** -  Each movie ratings is represented by a textual description of the movie name, stars (0-7), percentage ratings and personal comments.
+- [x] **3rd party API placeholder** - Fetch movie posters for the user homepage of favorite movies along with posters to match each review on the reviews page.
+- [x] **Images** - Images included in the profile page based on the users favorite movies.
+- [x] **Login placeholder** - Username and password boxes provided on the home pages along with buttons to login or create an account. 
+- [x] **DB data placeholder** - When users select the post review button on the reviews page, each entry will be put into a database and stored.
+- [x] **WebSocket placeholder** - The users movie reviews along with their friends are diplayed in real time on the ratings page. 
 
 ## 🚀 CSS deliverable
 

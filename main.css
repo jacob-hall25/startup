@@ -70,16 +70,16 @@ footer {
     background-color: #1a1a1a;
 }
 
-.navbar {
-    background-color: #1a1a1a;
-    border-bottom: 2px solid #e2b616;
-}
-
 menu {
     flex: 1;
     display: flex;
     flex-direction: row !important;
     list-style: none;
+}
+
+.navbar {
+    background-color: #1a1a1a;
+    border-bottom: 2px solid #e2b616;
 }
 
 .nav-link {
@@ -101,7 +101,11 @@ menu .nav-item {
 }
 
 footer a {
-    float: center;
+    float: right;
+}
+
+footer span {
+    float: left;
 }
 
 @media (max-height: 600px) {

@@ -5,53 +5,63 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Cinevaluate</title>
         <link rel="icon" href="favicon.ico" />
-
-        <link rel="stylesheet" href="styles.css" />
-
         <!-- CSS bootstrap framework -->
          <link
 
          href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
          rel="stylesheet"
-         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
          crossorigin="anonymous" 
         />
+        <link rel="stylesheet" href="main.css" />
     </head>
-    <body>
-        <header>
-            <h1>Cinevaluate</h1>
-            <nav>
-                <menu>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="ratings.html">Ratings</a></li>
-                    <li><a href="review.html">Post Review</a></li>
-                    <li><a href="profile.html">Profile</a></li>
+    <body class="bg-dark text-light">
+        <header class="container-fluid">
+            <nav class="navbar fixed-top navbar-dark">
+                <a class="navbar-brand" href="index.html">Cinevaluate</a>
+                <menu class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ratings.html">Ratings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="review.html">Post Review</a>
+                    </li>
+                    <li class="nave-item">
+                        <a class="nav-link" href="profile.html">Profile</a>
+                    </li>
                 </menu>
             </nav>
         </header>
-        <hr />
-        <main>
+        
+        <main class="container-fluid bg-secondary text-center">
             <!-- make original contributions here-->
-             <h1>Watch it, rate it, Cinevaluate it!</h1>
-             <form method="get" action="profile.html">
-                <h2>Login</h2>
-                <div>
-                    <span>Username</span>
-                    <input type="text" placeholder="username or email here" />
+            <div>
+                <h1>Watch it, rate it, Cinevaluate it!</h1>
+                <form method="get" action="profile.html">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Username</span>
+                        <input class="form-control" type="text" placeholder="username or email here" />
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Password</span>
+                        <input class="form-control" type="password" placeholder="password" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button type="submit" class="btn btn-secondary">Create account</button>
+                </form>
                 </div>
-                <div>
-                    <span>Password</span>
-                    <input type="password" placeholder="password" />
-                </div>
-                <button type="submit">Login</button>
-                <button type="submit">Create account</button>
-             </form>
         </main>
-        <footer>
-            <hr />
+        <footer class="bg-dark text-white-50">
+            <div class="container-fluid">
             <span class="text-reset">Jacob Hall</span>
+            <a class="text-reset" href="https://github.com/jacob-hall25/startup.git">GitHub</a>
             <br />
-            <a href="https://github.com/jacob-hall25/startup.git">GitHub</a>
+            </div>
+            
+            
         </footer>
         <!-- JavaScript bootstrap framework -->
         <script

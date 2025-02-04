@@ -3,7 +3,7 @@ body {
     flex-direction: column;
     min-width: 375px;
     min-height: 100vh;
-    background-color: #0a0f24;
+    background-color: #1a1a1a;
     color: #f5f5f5;
 }
 
@@ -105,7 +105,7 @@ footer a {
 }
 
 footer span {
-    
+    float: left;
 }
 
 @media (max-height: 600px) {

@@ -67,12 +67,12 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Header, footer, and main content body** - I did not complete this part of the deliverable.
-- [ ] **Navigation elements** - I did not complete this part of the deliverable.
-- [ ] **Responsive to window resizing** - I did not complete this part of the deliverable.
-- [ ] **Application elements** - I did not complete this part of the deliverable.
-- [ ] **Application text content** - I did not complete this part of the deliverable.
-- [ ] **Application images** - I did not complete this part of the deliverable.
+- [x] **Header, footer, and main content body** - Each html page has the same header and footer applications while each page has unique details for the main. the mains include a login page, user and friends ratings page, review page, and a profile page that were all styled using css.
+- [x] **Navigation elements** - The navigation elements, mainly buttons, were styled to change when the cursor hovers over and when clicked.
+- [x] **Responsive to window resizing** - All pages are responsive to window resizing.
+- [x] **Application elements** - Almost all of the HTML elements (div, header, footer, nav) had classes specifically named for them to use when styling in CSS.
+- [x] **Application text content** - Text colors, fonts, font sizes, and hover features were applied to all pages.
+- [x] **Application images** - The images on the profile page were styled with the hover feature to expand and change border color when interacted with.
 
 ## 🚀 React part 1: Routing deliverable
 

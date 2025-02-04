@@ -72,6 +72,11 @@
     transform: scale(1.1);;
 }
 
+.username {
+    color: #7a4e21;
+}
+
+
 @media (max-height: 600px) {
     header {
         display: none;

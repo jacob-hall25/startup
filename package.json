@@ -1,0 +1,25 @@
+{
+  "name": "startup",
+  "version": "1.0.0",
+  "description": "Cinevaluate is a movie review platform where users can rate, review, and share their opinions on films. Users can create personalized lists of their all-time favorite movies, organized by genre or theme. With the ability to see friends’ ratings and reviews in real time, Cinevaluate makes sharing and discovering new movies easy and enjoyable.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.1.0"
+  },
+ "dependencies": {
+    "bootstrap": "5.3.3",
+    "react": "^19.0.0",
+    "react-bootstrap": "2.10.9",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.5"
+  }
+}

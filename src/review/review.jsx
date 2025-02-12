@@ -1,9 +1,9 @@
 import React from 'react';
 
-export function Ratings() {
+export function Review() {
   return (
     <main className='container fluid bg-secondary text-center'>
-        <div>Ratings displayed here</div>
+        <div>Review displayed here</div>
     </main>
     );
 }

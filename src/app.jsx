@@ -46,7 +46,7 @@ export default function App() {
         <footer >
             <div className="container-fluid">
             <span className="text-reset">Jacob Hall</span>
-            <NavLink className="text-reset" href="https://github.com/jacob-hall25/startup.git">GitHub</NavLink>
+            <a className="text-reset" href="https://github.com/jacob-hall25/startup.git">GitHub</a>
             <br />
             </div>
         </footer>

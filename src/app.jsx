@@ -15,26 +15,26 @@ export default function App() {
     <div className="body bg-dark text-light">
         <header className="container-fluid">
             <nav className="navbar fixed-top navbar-dark">
-                <NavLink className="navbar-brand" href="index.html">Cinevaluate</NavLink>
+                <NavLink className="navbar-brand" to="login">Cinevaluate</NavLink>
                 <menu className="navbar-nav">
                     <li className="nav-item">
-                        <NavLink className="nav-link active" href="index.html">Home</NavLink>
+                        <NavLink className="nav-link active" to="login">Home</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link" href="ratings.html">Ratings</NavLink>
+                        <NavLink className="nav-link active" to="ratings">Ratings</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link" href="review.html">Review</NavLink>
+                        <NavLink className="nav-link active" to="review">Review</NavLink>
                     </li>
                     <li className="nave-item">
-                        <NavLink className="nav-link" href="profile.html">Profile</NavLink>
+                        <NavLink className="nav-link active" to="profile">Profile</NavLink>
                     </li>
                 </menu>
             </nav>
         </header>
 
         <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Home />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/ratings" element={<Ratings />} />
             <Route path="/review" element={<Review />} />

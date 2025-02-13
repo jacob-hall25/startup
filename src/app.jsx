@@ -34,6 +34,7 @@ export default function App() {
         </header>
 
         <Routes>
+            <Route path="/" element={<Home />} />
             <Route path="/login" element={<Home />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/ratings" element={<Ratings />} />

@@ -1,11 +1,12 @@
 import React from 'react';
 
+import { NavLink } from 'react-router-dom';
+
 export function Home() {
   return (
     <main className="container-fluid text-center">
             <div>
                 <h1>Watch it, rate it, Cinevaluate it!</h1>
-                <form method="get" action="profile.html">
                     <div className="input-group mb-3">
                         <span className="input-group-text">Username</span>
                         <input className="form-control" type="text" placeholder="username or email here" />
@@ -14,10 +15,9 @@ export function Home() {
                         <span className="input-group-text">Password</span>
                         <input className="form-control" type="password" placeholder="password" />
                     </div>
-                    <button type="submit" className="btn btn-primary">Login</button>
-                    <button type="submit" className="btn btn-secondary">Create account</button>
-                </form>
-                </div>
+                    <NavLink to="/profile" className="login-link">Login</NavLink>
+                    <NavLink to="/profile" className="create-account-link">Create account</NavLink>
+            </div>
         </main>
     );
 }

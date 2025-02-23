@@ -2,6 +2,37 @@ import React from 'react';
 import './ratings.css';
 
 export function Ratings() {
+    const [movieReview, setMovieReview] = React.useState([]);
+
+
+    React.useEffect(() => {
+        const reviewsText = localStorage.getItem("reviews");
+        if(reviewsText) {
+            setMovieReview(JSON.parse(reviewsText));
+        }
+    }, []);
+
+    const reviewRows = [];
+    if(movieReview.length) {
+        for (const [i, score] of movieReview.entries()) {
+            reviewRows.push(
+                <tr key={i}>
+                    <td>{score.movieName}</td>
+                    <td>{score.rating}</td>
+                    <td>{score.percentageRating}</td>
+                    <td>{score.comments}</td>
+                </tr>
+            );
+        }
+    }
+
+    else {
+        reviewRows.push(
+            <tr key="0">
+                <td colSpan="4">Enter a review!</td>
+            </tr>
+        );
+    }
   return (
     <main className="container-fluid text-center">
         <hr />

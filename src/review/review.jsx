@@ -6,18 +6,13 @@ import { NavLink } from 'react-router-dom';
 export function Review() {
 
     const [movieName, setMovieName] = React.useState("");
-    const [rating, setRating] = React.useState(0);
-    const [percentageRating, setPercentageRating] = React.useState(0);
+    const [rating, setRating] = React.useState("");
+    const [percentageRating, setPercentageRating] = React.useState("");
     const [comments, setComments] = React.useState("");
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
-        if (rating < 1 || rating > 7) {
-            alert("Rating must be between 1 and 7");
-            return;
-        }
-
+        
         const newReview = {movieName, rating, percentageRating, comments};
 
         const reviews = JSON.parse(localStorage.getItem("reviews")) || [];
@@ -27,11 +22,9 @@ export function Review() {
         localStorage.setItem("reviews", JSON.stringify(reviews));
 
         setMovieName("");
-        setRating(0);
-        setPercentageRating(0);
+        setRating("");
+        setPercentageRating("");
         setComments("");
-
-        window.location.href = "ratings.jsx";
     };
 
   return (
@@ -42,21 +35,45 @@ export function Review() {
                     <h2>Post a Review</h2>
                     <div className="form-group">
                         <span> &#127909;Movie Name </span>
-                        <input type="text" placeholder="movie name here" className="form-control" />
+                        <input 
+                        type="text" 
+                        placeholder="movie name here" 
+                        className="form-control"
+                        value={movieName}
+                        onChange={(e) => setMovieName(e.target.value)}
+                        required />
                     </div>
                     <div className="form-group">
                         <span> &#127775; Rating</span>
-                        <input type="number" placeholder="0-7 stars" className="form-control"/>
+                        <input
+                        type="text" 
+                        placeholder="0-7 stars" 
+                        className="form-control"
+                        value={rating}
+                        onChange={(e) => setRating(e.target.value)}
+                        required/>
                     </div>
 
                     <div className="form-group">
                         <span> &#128175; Percentage Rating </span>
-                        <input type="number" placeholder="0-100%" className="form-control" />
+                        <input 
+                        type="text" 
+                        placeholder="0-100%" 
+                        className="form-control" 
+                        value={percentageRating}
+                        onChange={(e) => setPercentageRating(e.target.value)}
+                        required/>
                     </div>
 
                     <div className="form-group">
                         <span> &#128172; Comments </span>
-                        <input type="text" placeholder="comments here" className="form-control"/>
+                        <input 
+                        type="text" 
+                        placeholder="comments here" 
+                        className="form-control"
+                        value={comments}
+                        onChange={(e) => setComments(e.target.value)}
+                        required/>
                     </div>
                     <br />
                     <NavLink to="/ratings" className="post-review-link" >Post Review</NavLink>

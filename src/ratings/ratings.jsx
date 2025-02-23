@@ -6,39 +6,76 @@ export function Ratings() {
     <main className="container-fluid text-center">
         <hr />
             <h1 className="container-fluid text-center">User and Friend Ratings</h1>
-            <p className="reviews">
-                <ul>
-                    <li><b>bubba_hall25:</b>  Sicario, 5/7, 90%, intense and deserving of its high ratings</li>
-                </ul>
-                <br />
-                <ul>
-                    <li><b>swg12:</b>  Inception 7/7, 93%, did the top fall?</li>
-                </ul>
-                <br />
-                <ul>
-                    <li><b>lil_bean:</b>  The Dark Knight, 6/7, 95%, Heath Ledger's performance is legendary</li>
-                </ul>
-                <br />
-                <ul>
-                    <li><b>cinelover_3000:</b>  The Departed, 6/7, 92%, a classNameic crime drama</li>
-                </ul>
-                <br />
-                <ul>
-                    <li><b>moviebuff:</b>  The Shawshank Redemption, 7/7, 100%, a must-watch</li>
-                </ul>
-                <br />
-                <ul>
-                    <li><b>twirley13:</b>  Interstellar, 6/7, 95%, a visually stunning film</li>
-                </ul>
-                <br />
-                <ul>
-                    <li><b>favorite_behe:</b>  Goodfellas, 6/7, 94%, a classNameic mob movie</li>
-                </ul>
-                <br />
-                <ul>
-                    <li><b>bubba_hall25:</b>  Whiplash, 6/7, 96%, a thrilling and intense film</li>
-                </ul>
-            </p>
+            <table className="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>Movie</th>
+                        <th>Rating</th>
+                        <th>Percentage Rating</th>
+                        <th>Comments</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>bubba_hall25</td>
+                        <td>Sicario</td>
+                        <td>5/7</td>
+                        <td>90%</td>
+                        <td>intense and deserving of its high ratings</td>
+                    </tr>
+                    <tr>
+                        <td>swg12</td>
+                        <td>Inception</td>
+                        <td>7/7</td>
+                        <td>93%</td>
+                        <td>did the top fall?</td>
+                    </tr>
+                    <tr>
+                        <td>lil_bean</td>
+                        <td>The Dark Knight</td>
+                        <td>6/7</td>
+                        <td>95%</td>
+                        <td>Heath Ledger's performance is legendary</td>
+                    </tr>
+                    <tr>
+                        <td>cinelover_3000</td>
+                        <td>The Departed</td>
+                        <td>6/7</td>
+                        <td>92%</td>
+                        <td>a classNameic crime drama</td>
+                    </tr>
+                    <tr>
+                        <td>moviebuff</td>
+                        <td>The Shawshank Redemption</td>
+                        <td>7/7</td>
+                        <td>100%</td>
+                        <td>a must-watch</td>
+                    </tr>
+                    <tr>
+                        <td>twirley13</td>
+                        <td>Interstellar</td>
+                        <td>6/7</td>
+                        <td>95%</td>
+                        <td>a visually stunning film</td>
+                    </tr>
+                    <tr>
+                        <td>favorite_behe</td>
+                        <td>Goodfellas</td>
+                        <td>6/7</td>
+                        <td>94%</td>
+                        <td>a classNameic mob movie</td>
+                    </tr>
+                    <tr>
+                        <td>bubba_hall25</td>
+                        <td>Whiplash</td>
+                        <td>6/7</td>
+                        <td>96%</td>
+                        <td>a thrilling and intense film</td>
+                    </tr>
+
+                </tbody>
+            </table>
         </main>
     );
 }

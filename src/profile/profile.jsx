@@ -1,6 +1,10 @@
 import React from 'react';
 import './profile.css';
 
+import { NavLink } from 'react-router-dom';
+
+
+
 export function Profile() {
     const [username, setUsername] = React.useState("bubba_hall25");
     const [movie1Title, setMovie1Title] = React.useState("Se7en");
@@ -37,9 +41,7 @@ export function Profile() {
         <hr />
             <div className="profile-header">
                 <h1 className="username">{username}</h1>
-                    <form method="get" action="index.html" style={{ display: "inline"}}>
-                        <button type="submit">Logout</button>
-                    </form>
+                <NavLink to="/login" className="logout-link">Logout</NavLink>
             </div>
             <h3>Famous Movies and Quotes</h3>
             <div className="movie-quote-list">

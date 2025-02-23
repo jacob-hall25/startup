@@ -13,7 +13,7 @@
     font-weight: bold;
 }
 
-.profile-header button {
+.logout-link {
     border: none;
     background-color: #ff204e;
     color: white;
@@ -21,11 +21,13 @@
     border-radius: 5px;
     font-size: 1rem;
     transition: all 0.3s ease-in-out;
+    text-decoration: none;
 }
 
-.profile-header button:hover {
+.logout-link:hover {
     background-color: #e2b616;
     color: #1a1a1a;
+    text-decoration: none;
 } 
 
 .movie-quote-list {

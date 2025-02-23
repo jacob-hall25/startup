@@ -1,13 +1,44 @@
 import React from 'react';
 import './review.css';
 
+import { NavLink } from 'react-router-dom';
+
 export function Review() {
+
+    const [movieName, setMovieName] = React.useState("");
+    const [rating, setRating] = React.useState(0);
+    const [percentageRating, setPercentageRating] = React.useState(0);
+    const [comments, setComments] = React.useState("");
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        if (rating < 1 || rating > 7) {
+            alert("Rating must be between 1 and 7");
+            return;
+        }
+
+        const newReview = {movieName, rating, percentageRating, comments};
+
+        const reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+
+        reviews.push(newReview);
+
+        localStorage.setItem("reviews", JSON.stringify(reviews));
+
+        setMovieName("");
+        setRating(0);
+        setPercentageRating(0);
+        setComments("");
+
+        window.location.href = "ratings.jsx";
+    };
+
   return (
     <main className="container-fluid text-center">
         <hr />
             <h1>Review</h1>
             <div className="review-container">
-                <form method="get" action="ratings.html">
                     <h2>Post a Review</h2>
                     <div className="form-group">
                         <span> &#127909;Movie Name </span>
@@ -28,8 +59,7 @@ export function Review() {
                         <input type="text" placeholder="comments here" className="form-control"/>
                     </div>
                     <br />
-                    <button type="submit" className="btn btn-primary">Post Review</button>
-                </form>
+                    <NavLink to="/ratings" className="post-review-link" >Post Review</NavLink>
             </div>
         </main>
     );

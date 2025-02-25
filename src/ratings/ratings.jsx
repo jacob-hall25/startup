@@ -12,28 +12,7 @@ export function Ratings() {
         }
     }, []);
 
-    const reviewRows = [];
-    if(movieReview.length) {
-        for (const [i, ,movie] of movieReview.entries()) {
-            reviewRows.push(
-                <tr key={i}>
-                    <td>{movie.username}</td>
-                    <td>{movie.movieName}</td>
-                    <td>{movie.rating}</td>
-                    <td>{movie.percentageRating}</td>
-                    <td>{movie.comments}</td>
-                </tr>
-            );
-        }
-    }
-
-    else {
-        reviewRows.push(
-            <tr key="0">
-                <td colSpan="4">Enter a review!</td>
-            </tr>
-        );
-    }
+    
   return (
     <main className="container-fluid text-center">
         <hr />
@@ -48,7 +27,23 @@ export function Ratings() {
                         <th>Comments</th>
                     </tr>
                 </thead>
-                <tbody id="reviews">{movieReview}</tbody>
+                <tbody>
+                    {movieReview.length > 0 ? (
+                        movieReview.map((review, index) => (
+                            <tr key={index}>
+                                <td>{review.username}</td>
+                                <td>{review.movieName}</td>
+                                <td>{review.rating}</td>
+                                <td>{review.percentageRating}</td>
+                                <td>{review.comments}</td>
+                            </tr>
+                        ))
+                    ) : (
+                        <tr>
+                            <td colSpan="5">Enter a review!</td>
+                        </tr>
+                    )}
+                </tbody>
                     
             </table>
         </main>

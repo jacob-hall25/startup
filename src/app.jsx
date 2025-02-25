@@ -7,9 +7,15 @@ import { Home } from './home/login';
 import { Profile } from './profile/profile';
 import { Ratings } from './ratings/ratings';
 import { Review } from './review/review';
+import { AuthState } from './home/authState';
 
 
 export default function App() {
+
+    const [userName, setUserName] = React.useState(localStorage.getItem('username') || '');
+    const currentAuthState = userName ? AuthState.Authenticated : AuthState.Unauthenticated;
+    const [authState, setAuthState] = React.useState(currentAuthState);
+
     return (
     <BrowserRouter>
     <div className="body bg-dark text-light">
@@ -20,20 +26,40 @@ export default function App() {
                     <li className="nav-item">
                         <NavLink className="nav-link active" to="login">Home</NavLink>
                     </li>
+                    {authState === AuthState.Authenticated && (
                     <li className="nav-item">
                         <NavLink className="nav-link active" to="ratings">Ratings</NavLink>
                     </li>
+                    )}
+                    {authState === AuthState.Authenticated && (
                     <li className="nav-item">
                         <NavLink className="nav-link active" to="review">Review</NavLink>
                     </li>
+                    )}
+                    {authState === AuthState.Authenticated && (
                     <li className="nave-item">
                         <NavLink className="nav-link active" to="profile">Profile</NavLink>
                     </li>
+                    )}
                 </menu>
             </nav>
         </header>
 
         <Routes>
+            <Route
+            path='/'
+            element={
+                <Home
+                userName={userName}
+                authState={authState}
+                onAuthChange={(userName, authState) => {
+                    setAuthState(authState);
+                    setUserName(userName);
+                }}
+            />
+            }
+            exact
+            />
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Home />} />
             <Route path="/profile" element={<Profile />} />

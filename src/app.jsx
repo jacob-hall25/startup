@@ -50,11 +50,11 @@ export default function App() {
             path='/'
             element={
                 <Home
-                userName={userName}
-                authState={authState}
-                onAuthChange={(userName, authState) => {
-                    setAuthState(authState);
-                    setUserName(userName);
+                    userName={userName}
+                    authState={authState}
+                    onAuthChange={(userName, authState) => {
+                        setAuthState(authState);
+                        setUserName(userName);
                 }}
             />
             }

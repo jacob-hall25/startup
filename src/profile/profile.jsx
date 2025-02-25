@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 
 
-export function Profile() {
+export function Profile(props) {
     const [username, setUsername] = React.useState("bubba_hall25");
     const [movie1Title, setMovie1Title] = React.useState("Se7en");
     const [movie1Image, setMovie1Image] = React.useState("https://tinyurl.com/4tvma26z");

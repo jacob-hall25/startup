@@ -14,13 +14,14 @@ export function Ratings() {
 
     const reviewRows = [];
     if(movieReview.length) {
-        for (const [i, score] of movieReview.entries()) {
+        for (const [i, ,movie] of movieReview.entries()) {
             reviewRows.push(
                 <tr key={i}>
-                    <td>{score.movieName}</td>
-                    <td>{score.rating}</td>
-                    <td>{score.percentageRating}</td>
-                    <td>{score.comments}</td>
+                    <td>{movie.username}</td>
+                    <td>{movie.movieName}</td>
+                    <td>{movie.rating}</td>
+                    <td>{movie.percentageRating}</td>
+                    <td>{movie.comments}</td>
                 </tr>
             );
         }
@@ -47,65 +48,8 @@ export function Ratings() {
                         <th>Comments</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>bubba_hall25</td>
-                        <td>Sicario</td>
-                        <td>5/7</td>
-                        <td>90%</td>
-                        <td>intense and deserving of its high ratings</td>
-                    </tr>
-                    <tr>
-                        <td>swg12</td>
-                        <td>Inception</td>
-                        <td>7/7</td>
-                        <td>93%</td>
-                        <td>did the top fall?</td>
-                    </tr>
-                    <tr>
-                        <td>lil_bean</td>
-                        <td>The Dark Knight</td>
-                        <td>6/7</td>
-                        <td>95%</td>
-                        <td>Heath Ledger's performance is legendary</td>
-                    </tr>
-                    <tr>
-                        <td>cinelover_3000</td>
-                        <td>The Departed</td>
-                        <td>6/7</td>
-                        <td>92%</td>
-                        <td>a classNameic crime drama</td>
-                    </tr>
-                    <tr>
-                        <td>moviebuff</td>
-                        <td>The Shawshank Redemption</td>
-                        <td>7/7</td>
-                        <td>100%</td>
-                        <td>a must-watch</td>
-                    </tr>
-                    <tr>
-                        <td>twirley13</td>
-                        <td>Interstellar</td>
-                        <td>6/7</td>
-                        <td>95%</td>
-                        <td>a visually stunning film</td>
-                    </tr>
-                    <tr>
-                        <td>favorite_behe</td>
-                        <td>Goodfellas</td>
-                        <td>6/7</td>
-                        <td>94%</td>
-                        <td>a classNameic mob movie</td>
-                    </tr>
-                    <tr>
-                        <td>bubba_hall25</td>
-                        <td>Whiplash</td>
-                        <td>6/7</td>
-                        <td>96%</td>
-                        <td>a thrilling and intense film</td>
-                    </tr>
-
-                </tbody>
+                <tbody id="reviews">{movieReview}</tbody>
+                    
             </table>
         </main>
     );

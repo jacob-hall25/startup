@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 export function Review() {
 
+    const [username, setUsername] = React.useState("");
     const [movieName, setMovieName] = React.useState("");
     const [rating, setRating] = React.useState("");
     const [percentageRating, setPercentageRating] = React.useState("");
@@ -13,7 +14,7 @@ export function Review() {
     const handleSubmit = (event) => {
         event.preventDefault();
         
-        const newReview = {movieName, rating, percentageRating, comments};
+        const newReview = {username, movieName, rating, percentageRating, comments};
 
         const reviews = JSON.parse(localStorage.getItem("reviews")) || [];
 
@@ -21,6 +22,7 @@ export function Review() {
 
         localStorage.setItem("reviews", JSON.stringify(reviews));
 
+        setUsername("");
         setMovieName("");
         setRating("");
         setPercentageRating("");
@@ -33,6 +35,16 @@ export function Review() {
             <h1>Review</h1>
             <div className="review-container">
                     <h2>Post a Review</h2>
+                    <div className="form-group">
+                        <span> &#128100;Username</span>
+                        <input
+                        type="text"
+                        placeholder="username here"
+                        className="form-control"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        required/>
+                    </div>
                     <div className="form-group">
                         <span> &#127909;Movie Name </span>
                         <input 

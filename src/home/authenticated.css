@@ -1,0 +1,45 @@
+.login-link, .create-account-link {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.login-link {
+    background-color: #e2b616 !important; 
+    color: #0a0f24; 
+    border: none;
+    box-shadow: 0 0 10px rgba(226, 182, 22, 0.5);
+    text-decoration: none;
+}
+
+.login-link:hover {
+    background-color: #ff204e; 
+    color: #fff;
+    box-shadow: 0 0 15px rgba(255, 32, 78, 0.8);
+    text-decoration: none;
+}
+
+
+.create-account-link {
+    background-color: #1dbf73; 
+    color: #0a0f24;
+    border: none;
+    box-shadow: 0 0 10px rgba(29, 191, 115, 0.5);
+    text-decoration: none;
+}
+
+.create-account-link:hover {
+    background-color: #ff204e;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(255, 32, 78, 0.8);
+    text-decoration: none;
+}
+
+.playerName {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1dbf73;
+    text-align: center;
+}

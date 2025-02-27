@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 
 
 export function Profile(props) {
-    const [username, setUsername] = React.useState("bubba_hall25");
+    // const [username, setUsername] = React.useState("bubba_hall25");
     const [movie1Title, setMovie1Title] = React.useState("Se7en");
     const [movie1Image, setMovie1Image] = React.useState("https://tinyurl.com/4tvma26z");
     const [movie1Quote, setMovie1Quote] = React.useState("What's in the box?");
@@ -21,7 +21,7 @@ export function Profile(props) {
     const [movie4Quote, setMovie4Quote] = React.useState("I drink your milkshake!");
 
     React.useEffect(() => {
-        setUsername("bubba_hall25");
+        // setUsername("bubba_hall25");
         setMovie1Title("Se7en");
         setMovie1Image("https://tinyurl.com/4tvma26z");
         setMovie1Quote("What's in the box?");
@@ -40,7 +40,7 @@ export function Profile(props) {
     <main className="container-fluid text-center profile-container">
         <hr />
             <div className="profile-header">
-                <h1 className="username">{username}</h1>
+                <h1 className="username">{props.username}</h1>
                 <NavLink to="/login" className="logout-link">Logout</NavLink>
             </div>
             <h3>Famous Movies and Quotes</h3>

@@ -62,10 +62,17 @@ export default function App() {
             <Route
             path='/login'
             element={
-                <Home
-                    username={userName}
-                    authState={authState}
-                    onAuthChange={(userName, authState) => {
+                <Home username={userName} authState={authState} onAuthChange={(userName, authState) => {
+                        setAuthState(authState);
+                        setUserName(userName);
+                    }}
+                    />
+            }
+            />
+            <Route
+            path='/profile'
+            element={
+                <Profile username={userName} authState={authState} onAuthChange={(userName, authState) => {
                         setAuthState(authState);
                         setUserName(userName);
                     }}

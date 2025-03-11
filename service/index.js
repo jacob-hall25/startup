@@ -21,7 +21,6 @@ var apiRouter = express.Router();
 app.use('/api', apiRouter);
 
 
-
 apiRouter.post('/auth/create', async (req, res) => {
   if (await findUser('email', req.body.email)) {
     res.status(409).send({ msg: 'User already exists' });
@@ -34,7 +33,7 @@ apiRouter.post('/auth/create', async (req, res) => {
 });
 
 
-apiRouter.post('auth/login', async (req, res) => {
+apiRouter.post('/auth/login', async (req, res) => {
   const user = await findUser('email', req.body.email);
   if (user) {
     if (await bcrypt.compare(req.body.password, user.password)) {
@@ -65,7 +64,8 @@ const verifyAuth = async (req, res, next) => {
   }
 };
 
-apiRouter.post('/ratings', verifyAuth, (_req, res) => {
+
+apiRouter.get('/ratings', verifyAuth, (_req, res) => {
   res.send(ratings);
 });
 

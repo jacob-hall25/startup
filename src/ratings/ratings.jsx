@@ -6,10 +6,15 @@ export function Ratings() {
 
 
     React.useEffect(() => {
-        const reviewsText = localStorage.getItem("reviews");
-        if(reviewsText) {
-            setMovieReview(JSON.parse(reviewsText));
-        }
+        fetch('/api/ratings')
+            .then((response) => response.json())
+            .then((ratings) => {
+                setMovieReview(ratings);
+            });
+        // const reviewsText = localStorage.getItem("reviews");
+        // if(reviewsText) {
+        //     setMovieReview(JSON.parse(reviewsText));
+        // }
     }, []);
 
     

@@ -69,7 +69,7 @@ apiRouter.get('/ratings', verifyAuth, (_req, res) => {
   res.send(ratings);
 });
 
-apiRouter.post('/rating', verifyAuth, async (req, res) => {
+apiRouter.post('/ratings', verifyAuth, async (req, res) => {
   ratings = updateRatings(req.body);
   res.send(ratings);
 });

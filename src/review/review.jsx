@@ -18,20 +18,43 @@ export function Review() {
         
         const newReview = {username, movieName, rating, percentageRating, comments};
 
-        const reviews = JSON.parse(localStorage.getItem("reviews")) || [];
 
-        reviews.push(newReview);
+        fetch('/api/ratings', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            },
+            body: JSON.stringify(newReview),
+            })
+            .then((response) => response.json())
+            .then((updatedRatings) => {
+                setUsername("");
+                setMovieName("");
+                setRating("");
+                setPercentageRating("");
+                setComments("");
+                navigate("/ratings");
+            })
+            .catch((error) => {
+                console.error('Error submitting review:', error);
+            });
 
-        localStorage.setItem("reviews", JSON.stringify(reviews));
+        };
+    //     const reviews = JSON.parse(localStorage.getItem("reviews")) || [];
 
-        setUsername("");
-        setMovieName("");
-        setRating("");
-        setPercentageRating("");
-        setComments("");
+    //     reviews.push(newReview);
 
-        navigate("/ratings");
-    };
+    //     localStorage.setItem("reviews", JSON.stringify(reviews));
+
+    //     setUsername("");
+    //     setMovieName("");
+    //     setRating("");
+    //     setPercentageRating("");
+    //     setComments("");
+
+    //     navigate("/ratings");
+    // };
 
   return (
     <main className="container-fluid text-center">

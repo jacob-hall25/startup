@@ -4,26 +4,25 @@ const cookieParser = require('cookie-parser');
 const bcrypt = require('bcryptjs');
 const uuid = require('uuid');
 
-const port = process.argv.length > 2 ? process.argv[2] : 3000;
-
-// app.get('*', (_req, res) => {
-//   res.send({ msg: 'Simon service' });
-// });
-
-app.listen(port, () => {
-  console.log(`Listening on port ${port}`);
-});
-
-app.use(express.json());
+const authCookieName = 'token';
 
 let users = [];
 let ratings = [];
 
-let apiRouter = express.Router();
+const port = process.argv.length > 2 ? process.argv[2] : 4000;
+
+app.use(express.json());
+
+app.use(cookieParser());
+
+app.use(express.static('public'));
+
+var apiRouter = express.Router();
 app.use('/api', apiRouter);
 
 
-apiRouter.post('/auth/create', async (requestAnimationFrame, res) => {
+
+apiRouter.post('/auth/create', async (req, res) => {
   if (await findUser('email', req.body.email)) {
     res.status(409).send({ msg: 'User already exists' });
   } else {
@@ -33,6 +32,7 @@ apiRouter.post('/auth/create', async (requestAnimationFrame, res) => {
     res.send({ email: user.email});
   }
 });
+
 
 apiRouter.post('auth/login', async (req, res) => {
   const user = await findUser('email', req.body.email);
@@ -47,7 +47,7 @@ apiRouter.post('auth/login', async (req, res) => {
   res.status(401).send({ msg: 'Unauthorized' });
 });
 
-apiRouter.post('/auth/logout', async (req, res) => {
+apiRouter.delete('/auth/logout', async (req, res) => {
   const user = await findUser('token', req.cookies[authCookieName]);
   if (user) {
     delete user.token;
@@ -82,6 +82,8 @@ app.use((_req, res) => {
   res.sendFile('index.html', { root: 'public' });
 });
 
+
+// need to call this function somewhere
 function addRating(newRating) {
   ratings.push(newRating);
   return ratings;

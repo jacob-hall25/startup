@@ -70,7 +70,7 @@ apiRouter.get('/ratings', verifyAuth, (_req, res) => {
 });
 
 apiRouter.post('/ratings', verifyAuth, async (req, res) => {
-  ratings = updateRatings(req.body);
+  ratings.push(req.body);
   res.send(ratings);
 });
 
@@ -82,12 +82,6 @@ app.use((_req, res) => {
   res.sendFile('index.html', { root: 'public' });
 });
 
-
-// need to call this function somewhere
-function addRating(newRating) {
-  ratings.push(newRating);
-  return ratings;
-}
 
 async function createUser(email, password) {
   const passwordHash = await bcrypt.hash(password, 10);

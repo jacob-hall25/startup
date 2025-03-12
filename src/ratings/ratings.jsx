@@ -6,10 +6,17 @@ export function Ratings() {
 
 
     React.useEffect(() => {
-        fetch('/api/ratings')
+        fetch('/api/ratings', {
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            }
+        })
             .then((response) => response.json())
             .then((ratings) => {
                 setMovieReview(ratings);
+            })
+            .catch((error) => {
+                console.error('Error fetching ratings:', error);
             });
         // const reviewsText = localStorage.getItem("reviews");
         // if(reviewsText) {

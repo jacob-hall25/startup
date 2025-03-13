@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom';
 import './profile.css';
 
 export function Profile(props) {
-    const API_key = '44e3a8725e3c39df2d5d8826debb2041';
 
+    const API_key = process.env.REACT_APP_API_KEY;
     const [movies, setMovies] = React.useState([]);
 
     React.useEffect(() => {

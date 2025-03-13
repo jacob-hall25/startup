@@ -2,54 +2,36 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './profile.css';
 
-
-
-
 export function Profile(props) {
-    const MOVIE_KEY = '525|uIY6IfcUGyqB4QUNSaYIUuKb34lMjzBcu2wiP3Vb';
+    const API_key = '44e3a8725e3c39df2d5d8826debb2041';
 
     const [movies, setMovies] = React.useState([]);
 
     React.useEffect(() => {
         async function fetchMovies() {
             try {
-                const headers = new Headers();
-                headers.append('Authorization', `${MOVIE_KEY}`);
-                headers.append('Accept', 'application/json');
+                let allMovies = [];
 
-                const movieResponse = await fetch("https://api.movieposterdb.com/v1/posters", {
-                    method: "GET",
-                    headers: headers
-                });
-
-                const movieData = await movieResponse.json();
-
-                if (!movieData || !movieData.data) {
-                    throw new Error("No movie data found");
-                }
-
-                const movieDetails = await Promise.all(
-                    movieData.data.map(async (movie) => {
-                        const movieID = movie.id;
-                        const movieTitle = movie.title;
-
-                        const posterResponse = await fetch(`https://api.movieposterdb.com/v1/posters?id=${movieID}`, {
-                            method: 'GET',
-                            headers: headers
-                        });
-                        const posterData = await posterResponse.json();
-
-                        if (!posterData || !posterData.data || posterData.data.length === 0) {
-                            throw new Error("No poster data found");
-                        }
-
-                        return { title: movieTitle, poster: posterData.data[0].image };
-                    })
+                for (let page = 1; page <= 5; page++) {
+                    const response = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${API_key}&language=en-US&page=${page}`
                 );
 
-                setMovies(movieDetails);
+                    const data = await response.json();
+
+                    if (data.results) {
+                        allMovies = allMovies.concat(data.results);
+                    }
+                }
+                const shuffledMovies = allMovies.sort(() => 0.5 - Math.random());
+
+                const randomMovies = shuffledMovies.slice(0, 10).map(movie => ({
+                    title: movie.title,
+                    poster: `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+                }));
+
+                setMovies(randomMovies);
             } catch (error) {
-                console.error(error);
+                console.error('Error fetching movies:', error);
             }
         }
 
@@ -64,7 +46,7 @@ export function Profile(props) {
                 <h1 className="username">{props.username}</h1>
                 <NavLink to="/login" className="logout-link">Logout</NavLink>
             </div>
-            <h3>Famous Movies</h3>
+            <h3>Popular Movies</h3>
             <div className="movie-quote-list">
                 {movies.length > 0 ? (
                     movies.map((movie, index) => (

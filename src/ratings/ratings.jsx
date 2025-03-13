@@ -18,10 +18,6 @@ export function Ratings() {
             .catch((error) => {
                 console.error('Error fetching ratings:', error);
             });
-        // const reviewsText = localStorage.getItem("reviews");
-        // if(reviewsText) {
-        //     setMovieReview(JSON.parse(reviewsText));
-        // }
     }, []);
 
     

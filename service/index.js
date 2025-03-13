@@ -1,3 +1,7 @@
+const dotenv = require('dotenv');
+dotenv.config();
+
+
 const express = require('express');
 const app = express();
 const cookieParser = require('cookie-parser');
@@ -32,6 +36,19 @@ apiRouter.post('/auth/create', async (req, res) => {
   }
 });
 
+apiRouter.post('/poster', async (req, res) => {
+  const { page } = req.body;
+  const API_KEY = process.env.API_KEY;
+
+  try {
+    const response = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=${page}`);
+    const data = await response.json();
+    res.send(data);
+  } catch (error) {
+    console.error('Error fetching movie data:', error);
+    res.status(500).send({ msg: 'Error fetching data from the movie API' });
+  }
+});
 
 apiRouter.post('/auth/login', async (req, res) => {
   const user = await findUser('email', req.body.email);

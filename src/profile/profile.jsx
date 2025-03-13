@@ -4,7 +4,6 @@ import './profile.css';
 
 export function Profile(props) {
 
-    const API_key = process.env.REACT_APP_API_KEY;
     const [movies, setMovies] = React.useState([]);
 
     React.useEffect(() => {
@@ -13,8 +12,16 @@ export function Profile(props) {
                 let allMovies = [];
 
                 for (let page = 1; page <= 5; page++) {
-                    const response = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${API_key}&language=en-US&page=${page}`
+                    const response = await fetch('/api/poster' , {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ page }),
+                    }
                 );
+
+                // call the function from backend to get the movies
 
                     const data = await response.json();
 

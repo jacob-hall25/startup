@@ -90,7 +90,8 @@ apiRouter.get('/ratings', verifyAuth, async (_req, res) => {
 });
 
 apiRouter.post('/ratings', verifyAuth, async (req, res) => {
-  const ratings = updateRating(req.body);
+  await DB.addRating(req.body);
+  const ratings = await DB.getRatings();
   res.send(ratings);
 });
 

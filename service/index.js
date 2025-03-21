@@ -1,5 +1,5 @@
-const dotenv = require('dotenv');
-dotenv.config();
+// const dotenv = require('./.env');
+// dotenv.config();
 
 
 const express = require('express');
@@ -37,11 +37,12 @@ apiRouter.post('/auth/create', async (req, res) => {
 });
 
 apiRouter.post('/poster', async (req, res) => {
+  let key = require('./key.json').key;
   const { page } = req.body;
-  const API_KEY = process.env.API_KEY;
+  // const API_KEY = process.env.API_KEY;
 
   try {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=${page}`);
+    const response = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${key}&language=en-US&page=${page}`);
     const data = await response.json();
     res.send(data);
   } catch (error) {

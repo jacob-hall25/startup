@@ -17,3 +17,6 @@ npm-debug.log*
 dbConfig.json
 
 service/.env
+
+service/dbConfig.json
+

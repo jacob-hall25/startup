@@ -7,11 +7,12 @@ const app = express();
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcryptjs');
 const uuid = require('uuid');
+const DB = require('./database.js');
 
 const authCookieName = 'token';
 
-let users = [];
-let ratings = [];
+// let users = [];
+// let ratings = [];
 
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
 
@@ -83,12 +84,13 @@ const verifyAuth = async (req, res, next) => {
 };
 
 
-apiRouter.get('/ratings', verifyAuth, (_req, res) => {
+apiRouter.get('/ratings', verifyAuth, async (_req, res) => {
+  const ratings = await DB.getRatings();
   res.send(ratings);
 });
 
 apiRouter.post('/ratings', verifyAuth, async (req, res) => {
-  ratings.push(req.body);
+  const ratings = updateRating(req.body);
   res.send(ratings);
 });
 
@@ -109,14 +111,18 @@ async function createUser(email, password) {
     password: passwordHash,
     token: uuid.v4(),
   };
-  users.push(user);
+  await DB.addUser(user);
   return user;
 }
 
 async function findUser(field, value) {
   if (!value) return null;
 
-  return users.find((u) => u[field] === value);
+  if (field === 'token') {
+    return DB.getUserByToken(value);
+  }
+
+  return DB.getUser(value);
 }
 
 function setAuthCookie(res, authToken) {

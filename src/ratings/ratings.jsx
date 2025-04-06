@@ -19,7 +19,7 @@ export function Ratings() {
                 console.error('Error fetching ratings:', error);
             });
 
-            const socket = new WebSocket('ws://localhost:400');
+            const socket = new WebSocket('ws://localhost:4000');
 
             socket.onmessage = (event) => {
                 const data = JSON.parse(event.data);

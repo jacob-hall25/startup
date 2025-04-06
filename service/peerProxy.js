@@ -31,11 +31,13 @@ function peerProxy(httpServer) {
 
     socketServer.broadcast = function broadcast(data) {
         socketServer.clients.forEach((client) => {
-            if (client.readyState === WebSocketServer.OPEN) {
+            if (client.readyState === client.OPEN) {
                 client.send(data);
             }
         });
     };
+
+    return socketServer;
 }
 
 module.exports = { peerProxy };

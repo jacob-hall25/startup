@@ -93,6 +93,7 @@ apiRouter.get('/ratings', verifyAuth, async (_req, res) => {
 apiRouter.post('/ratings', verifyAuth, async (req, res) => {
   await DB.addRating(req.body);
   const ratings = await DB.getRatings();
+  peerProxy.broadcast(JSON.stringify({ type: 'new_review', review: req.body }));
   res.send(ratings);
 });
 

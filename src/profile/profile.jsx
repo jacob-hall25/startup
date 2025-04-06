@@ -43,6 +43,17 @@ export function Profile(props) {
         }
 
         fetchMovies(); 
+
+        const socket = new WebSocket('ws://localhost:4000');
+        socket.onmessage = (event) => {
+            const data = JSON.parse(event.data);
+            if (data.type === 'new_review') {
+                const { username, movieName, rating, percentageRating, comments } = data.review;
+                alert(`🎬 ${username} just reviewed ${movieName} with a ${percentageRating} percent rating!`);
+            }
+        };
+
+        return () => socket.close();
     }, []); 
 
 

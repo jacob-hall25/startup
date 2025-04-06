@@ -28,6 +28,14 @@ function peerProxy(httpServer) {
             client.ping();
         });
     }, 10000);
+
+    socketServer.broadcast = function broadcast(data) {
+        socketServer.clients.forEach((client) => {
+            if (client.readyState === WebSocketServer.OPEN) {
+                client.send(data);
+            }
+        });
+    };
 }
 
 module.exports = { peerProxy };

@@ -13,6 +13,8 @@ export function Review() {
 
     const navigate = useNavigate();
 
+    const socket = new WebSocket('ws://localhost:4000');
+
     const handleSubmit = (event) => {
         event.preventDefault();
         
@@ -34,6 +36,9 @@ export function Review() {
                 setRating("");
                 setPercentageRating("");
                 setComments("");
+
+                socket.send(JSON.stringify({ type: 'new_review', review: newReview }));
+
                 navigate("/ratings");
             })
             .catch((error) => {

@@ -18,6 +18,17 @@ export function Ratings() {
             .catch((error) => {
                 console.error('Error fetching ratings:', error);
             });
+
+            const socket = new WebSocket('ws://localhost:400');
+
+            socket.onmessage = (event) => {
+                const data = JSON.parse(event.data);
+                if (data.type === 'new_review') {
+                    setMovieReview((prevReviews) => [data.review, ...prevReviews]);
+                }
+            };
+
+            return () => socket.close();
     }, []);
 
     

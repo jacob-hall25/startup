@@ -27,6 +27,7 @@ export function Review() {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${localStorage.getItem('token')}`,
             },
+            credentials: 'include',
             body: JSON.stringify(newReview),
             })
             .then((response) => response.json())
@@ -37,7 +38,7 @@ export function Review() {
                 setPercentageRating("");
                 setComments("");
 
-                socket.send(JSON.stringify({ type: 'new_review', review: newReview }));
+                socket.send(JSON.stringify({ type: 'new_review', review: newReview }))
 
                 navigate("/ratings");
             })
@@ -46,20 +47,6 @@ export function Review() {
             });
 
         };
-    //     const reviews = JSON.parse(localStorage.getItem("reviews")) || [];
-
-    //     reviews.push(newReview);
-
-    //     localStorage.setItem("reviews", JSON.stringify(reviews));
-
-    //     setUsername("");
-    //     setMovieName("");
-    //     setRating("");
-    //     setPercentageRating("");
-    //     setComments("");
-
-    //     navigate("/ratings");
-    // };
 
   return (
     <main className="container-fluid text-center">

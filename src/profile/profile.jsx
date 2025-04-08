@@ -45,6 +45,7 @@ export function Profile(props) {
         fetchMovies(); 
 
         const socket = new WebSocket('ws://localhost:4000');
+
         socket.onmessage = (event) => {
             const data = JSON.parse(event.data);
             if (data.type === 'new_review') {

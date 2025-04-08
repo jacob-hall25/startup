@@ -4,7 +4,6 @@ import './ratings.css';
 export function Ratings() {
     const [movieReview, setMovieReview] = React.useState([]);
 
-
     React.useEffect(() => {
         fetch('/api/ratings', {
             headers: {
@@ -13,7 +12,8 @@ export function Ratings() {
         })
             .then((response) => response.json())
             .then((ratings) => {
-                setMovieReview(ratings);
+                const reversed = ratings.reverse();
+                setMovieReview(reversed.slice(0,10));
             })
             .catch((error) => {
                 console.error('Error fetching ratings:', error);
@@ -24,7 +24,12 @@ export function Ratings() {
             socket.onmessage = (event) => {
                 const data = JSON.parse(event.data);
                 if (data.type === 'new_review') {
-                    setMovieReview((prevReviews) => [data.review, ...prevReviews]);
+                    setMovieReview((prevReviews) => {
+                        const updated = [data.review, ...prevReviews];
+                        return updated.slice(0,10);
+                    });
+                    const { username, movieName, rating, percentageRating, comments } = data.review;
+                    alert(`🎬 ${username} just reviewed ${movieName} with a ${percentageRating} percent rating!`);
                 }
             };
 
@@ -48,7 +53,7 @@ export function Ratings() {
                 </thead>
                 <tbody>
                     {movieReview.length > 0 ? (
-                        movieReview.map((review, index) => (
+                        movieReview.slice(0,10).map((review, index) => (
                             <tr key={index}>
                                 <td>{review.username}</td>
                                 <td>{review.movieName}</td>

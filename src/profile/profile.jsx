@@ -6,6 +6,12 @@ export function Profile(props) {
 
     const [movies, setMovies] = React.useState([]);
 
+    const socket = React.useMemo(() => {
+        const port = window.location.port;
+        const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
+        return new WebSocket(`${protocol}://${window.location.hostname}:${port}/ws`);
+    }, []);
+
     React.useEffect(() => {
         async function fetchMovies() {
             try {
@@ -45,11 +51,7 @@ export function Profile(props) {
         fetchMovies(); 
 
         // const socket = new WebSocket('ws://localhost:4000');
-        const socket = React.useMemo(() => {
-            const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
-            const host = window.location.host;
-            return new WebSocket(`${protocol}://${host}`);
-          }, []);
+       
 
         socket.onmessage = (event) => {
             const data = JSON.parse(event.data);
@@ -60,7 +62,7 @@ export function Profile(props) {
         };
 
         return () => socket.close();
-    }, []); 
+    }, [socket]); 
 
 
   return (

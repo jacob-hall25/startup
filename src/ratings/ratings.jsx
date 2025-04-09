@@ -4,6 +4,12 @@ import './ratings.css';
 export function Ratings() {
     const [movieReview, setMovieReview] = React.useState([]);
 
+    const socket = React.useMemo(() => {
+        const port = window.location.port;
+        const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
+        return new WebSocket(`${protocol}://${window.location.hostname}:${port}/ws`);
+    }, []);
+
     React.useEffect(() => {
         fetch('/api/ratings', {
             headers: {
@@ -21,10 +27,7 @@ export function Ratings() {
             });
 
             // const socket = new WebSocket('ws://localhost:4000');
-            const protocol = window.location.protool === 'https:' ? 'wss' : 'ws';
-            const host = window.location.host;
-            const socket = new Websocket(`${protocol}://${host}`);
-
+            
             socket.onmessage = (event) => {
                 const data = JSON.parse(event.data);
                 if (data.type === 'new_review') {
@@ -38,7 +41,7 @@ export function Ratings() {
             };
 
             return () => socket.close();
-    }, []);
+    }, [socket]);
 
     
   return (

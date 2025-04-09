@@ -15,9 +15,8 @@ const authCookieName = 'token';
 // let users = [];
 // let ratings = [];
 
-// const port = process.argv.length > 2 ? process.argv[2] : 4000;
+const port = process.argv.length > 2 ? process.argv[2] : 4000;
 
-const port = process.env.PORT || 4000;
 
 app.use(express.json());
 
@@ -132,9 +131,9 @@ async function findUser(field, value) {
 
 function setAuthCookie(res, authToken) {
   res.cookie(authCookieName, authToken, {
-    secure: false,
+    secure: true,
     httpOnly: true,
-    sameSite: 'lax',
+    sameSite: 'strict',
   });
 }
 
@@ -143,4 +142,4 @@ const httpService = app.listen(port, () => {
 });
 
 
-const webSocketServer = peerProxy(httpService);
+peerProxy(httpService);

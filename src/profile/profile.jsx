@@ -44,7 +44,12 @@ export function Profile(props) {
 
         fetchMovies(); 
 
-        const socket = new WebSocket('ws://localhost:4000');
+        // const socket = new WebSocket('ws://localhost:4000');
+        const socket = React.useMemo(() => {
+            const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
+            const host = window.location.host;
+            return new WebSocket(`${protocol}://${host}`);
+          }, []);
 
         socket.onmessage = (event) => {
             const data = JSON.parse(event.data);

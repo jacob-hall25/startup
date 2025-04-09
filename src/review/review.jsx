@@ -13,7 +13,12 @@ export function Review() {
 
     const navigate = useNavigate();
 
-    const socket = new WebSocket('ws://localhost:4000');
+    // const socket = new WebSocket('ws://localhost:4000');
+    const socket = React.useMemo(() => {
+        const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
+        const host = window.location.host;
+        return new Websocket(`${protocol}://${host}`);
+    }, []);
 
     const handleSubmit = (event) => {
         event.preventDefault();

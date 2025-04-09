@@ -8,7 +8,8 @@ export function Ratings() {
         fetch('/api/ratings', {
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`,
-            }
+            },
+            credentials: 'include',
         })
             .then((response) => response.json())
             .then((ratings) => {
@@ -19,7 +20,10 @@ export function Ratings() {
                 console.error('Error fetching ratings:', error);
             });
 
-            const socket = new WebSocket('ws://localhost:4000');
+            // const socket = new WebSocket('ws://localhost:4000');
+            const protocol = window.location.protool === 'https:' ? 'wss' : 'ws';
+            const host = window.location.host;
+            const socket = new Websocket(`${protocol}://${host}`);
 
             socket.onmessage = (event) => {
                 const data = JSON.parse(event.data);

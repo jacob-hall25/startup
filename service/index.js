@@ -142,4 +142,4 @@ const httpService = app.listen(port, () => {
 });
 
 
-peerProxy(httpService);
+const webSocketServer = peerProxy(httpService);

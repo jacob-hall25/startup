@@ -41,7 +41,15 @@ export function Review() {
             credentials: 'include',
             body: JSON.stringify(newReview),
             })
-            .then((response) => response.json())
+
+            .then(async (response) => {
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`Error ${response.status}: ${errorText}`);
+                }
+                return response.json();
+            })
+
             .then((updatedRatings) => {
                 setUsername("");
                 setMovieName("");
